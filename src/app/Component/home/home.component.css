@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+div a{
+  height: 30px;
+  width: 10rem;
+  border: 1px solid whitesmoke;
+  border-radius: 1rem;
+  margin:0.5rem;
+  /* display: flex;
+  flex-direction: column; */
+  overflow: hidden;
+  color: #e72929;
+  /* margin-top: 20px; */
+}
+
+div a:hover{
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+div a img{
+  object-fit: cover;
+  height:300px;
+  width: 300px;
+}
+.hover:hover{
+  box-shadow: 0px 0px 15px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+}
+.container{
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1{
+  text-align: center;
+  text-decoration: solid underline;
+  color: #FD1C03;
+}
+.exmple-card{
+  margin: 10px;
+  display: flex;
+  flex-wrap:wrap ;
+}
+
+.search{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+div input{
+  border-radius: 10rem 10rem 10rem 10rem;
+  border: none;
+  height: 3rem;
+  width: 20rem;
+  background-color:#f1f1f1 ;
+  padding: 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+}
+.label{
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag{
+  display:contents;
+  width: 1200px
+  
+}
+
+ul.tab {
+  list-style-type: none;
+  margin: 1rem;
+  padding: 0px 0px 20px 0px;
+  overflow: hidden;
+  background-color: #f1f1f1; 
+  width: 500px;
+  height: 100px;
+}
+ ul.tab li {
+  float:left;
+  margin-left:5px ;
+  margin-top: 20px;
+}
+.tag ul.tab li a {
+  display: inline;
+  color: black;
+  text-align:justify;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+  /* margin: 5rem; */
+}
+.tag ul.tab li a:focus, .active {
+  background-color: #ccc;
+}
+ul.tab li a:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.circle{
+  border: 1px solid;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 45px;
+    font-size: 12px;
+    height: 45px;
+    width: 50px;
+}
+li a{
+  height: 45px;
+  width: 50px;
+}

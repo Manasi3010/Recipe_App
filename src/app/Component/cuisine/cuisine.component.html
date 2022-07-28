@@ -1,0 +1,103 @@
+<div>
+  <h1>Recipes...</h1>
+</div>
+<div class="search">
+  <form appearance="standard">
+    <input
+      matInput
+      class="form-contol mr-sm-2"
+      type="text"
+      name="title"
+      placeholder="serach here....!"
+      [(ngModel)]="searchText"
+    />
+  </form>
+</div>
+<div
+  class="tag"
+  style="
+    top: 0px;
+    left: 0px;
+    transform: translateX(8px) translateY(0px);
+    width: 236px;
+    height: 321px;
+  "
+>
+  <ul class="tab" style="width: 1400px; height: 125px">
+    <li>
+      <img src="../../../assets/all.png" class="circle" />
+      <a [routerLink]="['/home']"> All</a>
+    </li>
+    <li>
+      <img src="../../../assets/birtish.png" class="circle" /><a
+        [routerLink]="['/cuisine', 'British']"
+        >British</a
+      >
+    </li>
+    <li>
+      <img src="../../../assets/american.png" class="circle" /><a
+        [routerLink]="['/cuisine', 'American']"
+        >American</a
+      >
+    </li>
+    <li>
+      <img src="../../../assets/world.png" class="circle" /><a
+        [routerLink]="['/cuisine', 'World']"
+        >World</a
+      >
+    </li>
+    <li>
+      <img src="../../../assets/french.png" class="circle" /><a
+        [routerLink]="['/cuisine', 'French']"
+      >
+        French</a
+      >
+    </li>
+    <li>
+      <img src="../../../assets/centraleurope.png" class="circle" /><a
+        [routerLink]="['/cuisine', 'Central europe']"
+        >Central europe</a
+      >
+    </li>
+    <li>
+      <img src="../../../assets/mediterranean.png" class="circle" /><a
+        [routerLink]="['/cuisine', 'Mediterranean']"
+        >Mediterranean</a
+      >
+    </li>
+    <li>
+      <img src="../../../assets/mexicon.png" class="circle" /><a
+        [routerLink]="['/cuisine', 'Mexican']"
+        >Mexicon</a
+      >
+    </li>
+  </ul>
+</div>
+
+<div>
+  <div class="container">
+    <mat-card
+      class="exmple-card"
+      *ngFor="let data of obs | async | filter: searchText"
+    >
+      <ng-container>
+        <div class="recipes">
+          <a [routerLink]="['/view', data.id]">
+            <mat-card-title>{{ data.label }}</mat-card-title></a
+          >
+          <img
+            src="{{ data.image }}"
+            style="height: 300px; width: 300px"
+            class="hover"
+          />
+        </div>
+      </ng-container>
+    </mat-card>
+  </div>
+</div>
+<mat-paginator
+  [length]="10"
+  [pageSize]="10"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select Page"
+></mat-paginator>

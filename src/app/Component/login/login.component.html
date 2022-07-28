@@ -1,0 +1,63 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <P>Login</P>
+    </div>
+    <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+      <div class="form">
+        <mat-form-field class="full-width">
+          <mat-label for="user-email" style="padding-top: 13px"
+            >Email</mat-label
+          >
+          <input
+            formControlName="email"
+            matInput
+            placeholder="Enter email address"
+            required
+            class="form-content"
+          />
+          <mat-error *ngIf="!loginForm.controls['email'].valid">
+            Email is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <span>
+          <a class="text-link" class="aLink" routerLink="/auth/forgot-password"
+            >Forgot Password?</a
+          >
+        </span>
+        <mat-form-field class="full-width">
+          <mat-label>Password</mat-label>
+          <input
+            formControlName="password"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            required
+            class="form-content"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide Password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>
+              {{ hide ? "visibility_off" : "visibility" }}
+            </mat-icon>
+          </button>
+          <mat-error *ngIf="!loginForm.controls['password'].valid">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button mat-flat-button class="Login">Login</button>
+    </form>
+
+    <div class="Register">
+      <p>Create New Account</p>
+    </div>
+  </mat-card-content>
+</mat-card>
